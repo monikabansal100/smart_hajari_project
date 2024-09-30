@@ -1,0 +1,69 @@
+const { holidayList } = require(".");
+
+module.exports = (sequelize, DataTypes) => {
+
+    const model = sequelize.define("holiday", {
+        title: {
+            type: DataTypes.STRING,
+            // allowNull: false
+        },
+        date: {
+            type: DataTypes.JSON,
+            allowNull: false
+        },
+        // date: {
+        //     type: DataTypes.ARRAY(DataTypes.DATE),
+        //     allowNull: false
+        // },
+        type: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        sessionMasterId: {
+            type: DataTypes.INTEGER,
+        },
+        holidayListId: {
+            type: DataTypes.INTEGER,
+        },
+        instituteId: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        userId: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+
+
+    });
+
+    return model;
+}
+
+
+
+
+// Admissionid
+// Promotionid
+// Date
+// Classmasterid
+// Streammasterid
+// Sectionmasterid
+// Direction - In/Out
+// Ismail-0
+// IsSms-0
+
+
+
+// {
+//     "to": "bansalmonika143@gmail.com",
+//     "admissionid": 6,
+//     "promotionid": 2,
+//     "subject": "student attendence updation",
+//     "text": "student is present",
+//     "date": "2024-09-09",
+//     "classMasterId": 4,
+//     "streamMasterId": 5,
+//     "sectionMasterId": 3,
+//     "studentMasterId": 2
+// }
